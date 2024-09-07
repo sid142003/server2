@@ -6,7 +6,8 @@ const Video = require('../models/VideoUpload');
 exports.uploadVideo = async (req, res) => {
   try {
     const {  videoUrl, organizer ,eventId } = req.body;
-    const newVideo = new VideoUpload({ videoUrl, organizer ,eventId });
+   
+    const newVideo = new Video({ videoUrl, organizer ,eventId });
     console.log('Saving new video:', newVideo);
     await newVideo.save();
     console.log('Video saved successfully');
